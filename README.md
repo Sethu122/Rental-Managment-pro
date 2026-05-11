@@ -1,6 +1,6 @@
 # Rental-Managment-pro
 
-Residential Rental Management System is a commercial Windows desktop application for managing residential rental properties, units, tenants, rent arrears, maintenance, and reports.
+Rental Management Pro is a commercial Windows desktop application for managing residential rental properties, units, tenants, rent arrears, maintenance, and reports.
 
 ## Features
 

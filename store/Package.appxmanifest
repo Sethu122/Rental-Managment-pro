@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-         IgnorableNamespaces="uap rescap">
-  <Identity Name="YourCompany.ResidentialRentalManagement"
-            Publisher="CN=Your Property Company"
-            Version="1.0.0.0" />
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap rescap">
+  <Identity Name="VertexPropertySystems.RentalManagementPro" Publisher="CN=2DB1F210-5526-46CD-95B5-870E42320CCF" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>Residential Rental Management System</DisplayName>
-    <PublisherDisplayName>Your Property Company</PublisherDisplayName>
+    <DisplayName>Rental Management Pro</DisplayName>
+    <PublisherDisplayName>Vertex Property Systems</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -18,14 +13,8 @@
     <Resource Language="en-us" />
   </Resources>
   <Applications>
-    <Application Id="App"
-                 Executable="Residential Rental Management System.exe"
-                 EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="Residential Rental Management System"
-                          Description="Residential rental property, tenant, rent, maintenance, and reporting management."
-                          BackgroundColor="#2563EB"
-                          Square150x150Logo="Assets\Square150x150Logo.png"
-                          Square44x44Logo="Assets\Square44x44Logo.png">
+    <Application Id="App" Executable="Residential Rental Management System.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Rental Management Pro" Description="Residential rental property, tenant, rent, maintenance, and reporting management." BackgroundColor="#2563EB" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
       </uap:VisualElements>
     </Application>

@@ -2,7 +2,7 @@
 
 ## App Name
 
-Residential Rental Management System
+Rental Management Pro
 
 ## Short Description
 
@@ -10,7 +10,7 @@ Offline Windows desktop software for managing residential properties, tenants, r
 
 ## Full Description
 
-Residential Rental Management System is a professional Windows desktop application for landlords, rental administrators, and small property-management teams that need a clean offline system for day-to-day rental operations.
+Rental Management Pro is a professional Windows desktop application for landlords, rental administrators, and small property-management teams that need a clean offline system for day-to-day rental operations.
 
 Manage properties and units, assign tenants, track lease dates and rent amounts, monitor monthly paid and unpaid rent, calculate arrears, log maintenance issues, and export rent summaries to PDF or CSV.
 

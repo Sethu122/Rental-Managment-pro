@@ -11,4 +11,7 @@ if (-not (Test-Path -LiteralPath $MakeAppx)) {
 Set-Location -Path $ProjectRoot
 powershell -ExecutionPolicy Bypass -File ".\installer\prepare_release.ps1"
 & $MakeAppx pack /d $PackageFolder /p $MsixPath /overwrite
+if ($LASTEXITCODE -ne 0) {
+  throw "makeappx.exe failed with exit code $LASTEXITCODE."
+}
 Write-Host "MSIX package created: $MsixPath"
