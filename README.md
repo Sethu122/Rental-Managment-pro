@@ -83,7 +83,11 @@ iscc .\installer\ResidentialRentalManagement.iss
 
 ## Microsoft Store
 
-See `store/MSIX_PUBLISHING_GUIDE.md` and `store/Package.appxmanifest`.
+See:
+
+- `store/MSIX_PUBLISHING_GUIDE.md`
+- `store/PUBLISHING_CHECKLIST.md`
+- `store/STORE_LISTING_DRAFT.md`
 
 ## Data Storage
 
