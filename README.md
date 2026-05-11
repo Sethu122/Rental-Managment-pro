@@ -48,7 +48,7 @@ Edit `config/branding.json`:
 
 The app runs in `TRIAL` mode without a valid local license. Trial mode limits the number of properties.
 
-Production license keys are validated locally by `app/services/license_service.py`. Generate client keys with `LicenseService.expected_key(licensed_to, expires_at)` and store the issued client/company name and expiry date with the key.
+Production license codes are validated locally by `app/services/license_service.py`. Generate client codes with `LicenseService.generate_license_token(licensed_to, expires_at)`.
 
 ## Build Windows EXE
 

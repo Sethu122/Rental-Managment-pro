@@ -318,8 +318,17 @@ class MainWindow(QMainWindow):
         dialog = LicenseDialog(self)
         if dialog.exec():
             data = dialog.data()
-            if self.controller.license.save_license(data["key"], data["licensed_to"], data["expires_at"]):
-                QMessageBox.information(self, "Activated", "License activated successfully.")
-                self.refresh_all()
-            else:
-                QMessageBox.warning(self, "Invalid license", "The license key is invalid or expired.")
+            try:
+                activated = (
+                    self.controller.license.activate_license_code(data["token"])
+                    if data["mode"] == "token"
+                    else self.controller.license.save_license(data["key"], data["licensed_to"], data["expires_at"])
+                )
+            except Exception as exc:
+                QMessageBox.warning(self, "Invalid license", str(exc))
+                return
+            if not activated:
+                QMessageBox.warning(self, "Invalid license", "The license is invalid or expired.")
+                return
+            QMessageBox.information(self, "Activated", "License activated successfully.")
+            self.refresh_all()

@@ -33,6 +33,21 @@ Upload this file in Partner Center:
 installer\release\ResidentialRentalManagement.msix
 ```
 
+## Reviewer License Code
+
+Generate a one-box activation code for Microsoft certification notes:
+
+```powershell
+.\installer\generate_license_code.ps1 -LicensedTo "Microsoft Store Reviewer" -ExpiresAt "2027-12-31"
+```
+
+Certification note:
+
+```text
+On first launch, create any administrator account.
+To test licensed mode, open Licensing, click Activate License, paste the provided license code in Quick activation, and save.
+```
+
 ## Store Submission Fields
 
 - Price: choose the closest paid tier to USD 250.

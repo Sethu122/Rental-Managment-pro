@@ -12,6 +12,8 @@ from PyQt6.QtWidgets import (
     QSpinBox,
     QTextEdit,
     QVBoxLayout,
+    QTabWidget,
+    QWidget,
 )
 
 
@@ -192,24 +194,44 @@ class LicenseDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Activate License")
+        tabs = QTabWidget()
+
+        quick_tab = QWidget()
+        quick_form = QFormLayout(quick_tab)
+        self.license_code = QTextEdit()
+        self.license_code.setPlaceholderText("Paste license code")
+        self.license_code.setFixedHeight(100)
+        quick_form.addRow("License code", self.license_code)
+
+        manual_tab = QWidget()
+        manual_form = QFormLayout(manual_tab)
         self.licensed_to = QLineEdit()
         self.expires_at = QDateEdit()
         self.expires_at.setCalendarPopup(True)
         self.expires_at.setDate(QDate.currentDate().addYears(1))
         self.key = QLineEdit()
-        form = QFormLayout()
-        form.addRow("Licensed to", self.licensed_to)
-        form.addRow("Expires", self.expires_at)
-        form.addRow("License key", self.key)
+        manual_form.addRow("Licensed to", self.licensed_to)
+        manual_form.addRow("Expires", self.expires_at)
+        manual_form.addRow("License key", self.key)
+
+        tabs.addTab(quick_tab, "Quick activation")
+        tabs.addTab(manual_tab, "Manual")
+        self.tabs = tabs
         buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Save | QDialogButtonBox.StandardButton.Cancel)
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
         layout = QVBoxLayout(self)
-        layout.addLayout(form)
+        layout.addWidget(tabs)
         layout.addWidget(buttons)
 
     def data(self):
+        if self.tabs.currentIndex() == 0:
+            return {
+                "mode": "token",
+                "token": require_text(self.license_code.toPlainText(), "License code"),
+            }
         return {
+            "mode": "manual",
             "licensed_to": require_text(self.licensed_to.text(), "Licensed to"),
             "expires_at": self.expires_at.date().toString("yyyy-MM-dd"),
             "key": require_text(self.key.text(), "License key").upper(),

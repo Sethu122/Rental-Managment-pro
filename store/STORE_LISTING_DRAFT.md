@@ -53,3 +53,5 @@ Replace this draft with your hosted privacy policy URL before Microsoft Store su
 ## Certification Notes
 
 This is an offline desktop business application packaged as MSIX. It uses the `runFullTrust` capability because it is a full-trust Windows desktop application built with Python and PyQt6.
+
+On first launch, create any administrator account. To test licensed mode, open Licensing, click Activate License, paste the provided license code in Quick activation, and save.
