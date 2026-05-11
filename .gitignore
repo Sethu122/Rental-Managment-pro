@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+*.sqlite
+logs/
+build/
+dist/
+*.spec~
+.pytest_cache/
+.mypy_cache/
+installer/output/
+*.msix
+*.cer
+*.pfx

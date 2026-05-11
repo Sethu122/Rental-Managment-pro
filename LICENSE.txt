@@ -1,0 +1,11 @@
+Proprietary Commercial Software License
+
+Copyright (c) 2026. All rights reserved.
+
+This software, Residential Rental Management System, is proprietary and confidential.
+No part of this software may be copied, modified, distributed, sublicensed, resold,
+reverse engineered, or used outside the terms of a valid commercial license
+agreement issued by the copyright holder.
+
+Trial use is permitted only through the built-in trial mode limits. A valid
+license key is required for unrestricted commercial use.
