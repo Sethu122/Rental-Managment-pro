@@ -29,3 +29,21 @@ class AuthService:
         if row and self.verify_password(password, row["password_hash"]):
             return {"id": row["id"], "username": row["username"], "role": row["role"]}
         return None
+
+    def user_count(self) -> int:
+        with get_connection() as conn:
+            return conn.execute("SELECT COUNT(*) FROM users").fetchone()[0]
+
+    def create_admin(self, username: str, password: str) -> dict:
+        username = username.strip()
+        if not username:
+            raise ValueError("Username is required.")
+        if len(password) < 8:
+            raise ValueError("Password must be at least 8 characters.")
+        with get_connection() as conn:
+            cur = conn.execute(
+                "INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)",
+                (username, self.hash_password(password), "admin"),
+            )
+            user_id = cur.lastrowid
+        return {"id": user_id, "username": username, "role": "admin"}

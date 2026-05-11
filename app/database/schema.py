@@ -1,5 +1,4 @@
 from app.database.connection import get_connection
-from app.services.auth_service import AuthService
 
 
 SCHEMA = """
@@ -80,9 +79,3 @@ CREATE TABLE IF NOT EXISTS licenses (
 def initialize_database() -> None:
     with get_connection() as conn:
         conn.executescript(SCHEMA)
-        count = conn.execute("SELECT COUNT(*) FROM users").fetchone()[0]
-        if count == 0:
-            conn.execute(
-                "INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)",
-                ("admin", AuthService.hash_password("admin123"), "admin"),
-            )

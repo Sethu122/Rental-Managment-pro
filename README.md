@@ -17,14 +17,9 @@ Residential Rental Management System is a commercial Windows desktop application
 - PyInstaller Windows packaging with no console window.
 - Microsoft Store MSIX preparation files and publishing guide.
 
-## First Login
+## First Launch
 
-On first launch the app creates a default local admin account:
-
-- Username: `admin`
-- Password: `admin123`
-
-Change this before distributing to clients by creating an admin-management workflow or replacing the seeded password in `app/database/schema.py` before first launch.
+On first launch, the app opens a setup screen and requires the customer to create a local administrator account. No default credentials are shipped.
 
 ## Development Setup
 

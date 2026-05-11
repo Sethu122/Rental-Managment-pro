@@ -4,8 +4,9 @@ import sys
 from PyQt6.QtWidgets import QApplication
 
 from app.database.schema import initialize_database
+from app.services.auth_service import AuthService
 from app.services.branding_service import BrandingService
-from app.ui.login import LoginDialog
+from app.ui.login import FirstRunSetupDialog, LoginDialog
 from app.ui.main_window import MainWindow
 from app.ui.styles import build_stylesheet
 from app.utils.logging_config import configure_logging
@@ -21,7 +22,8 @@ def main() -> int:
     app.setOrganizationName(branding.company_name)
     app.setStyleSheet(build_stylesheet(branding.primary_color))
 
-    login = LoginDialog(branding)
+    auth = AuthService()
+    login = FirstRunSetupDialog(branding) if auth.user_count() == 0 else LoginDialog(branding)
     if login.exec() != LoginDialog.DialogCode.Accepted:
         return 0
 

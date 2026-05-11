@@ -29,10 +29,7 @@ To run the application:
 2. Double-click "$AppName.exe".
 
 Default first login:
-Username: admin
-Password: admin123
-
-Change the admin credentials before delivering production copies to clients.
+The app will ask you to create an administrator account on first launch.
 "@
 $Readme | Set-Content -Path (Join-Path $BundleTarget "README-FIRST.txt") -Encoding UTF8
 
