@@ -67,6 +67,17 @@ The executable is created under:
 - `dist/Residential Rental Management System/`
 - `installer/output/Residential Rental Management System.exe`
 
+## Prepare Release Package
+
+```powershell
+.\installer\prepare_release.ps1
+```
+
+This creates:
+
+- `installer/release/Residential Rental Management System-1.0.0-Windows.zip`
+- `installer/release/msix-layout/`
+
 ## Optional Inno Setup Installer
 
 Install Inno Setup, then compile:

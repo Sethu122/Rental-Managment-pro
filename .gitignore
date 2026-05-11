@@ -11,6 +11,7 @@ dist/
 .pytest_cache/
 .mypy_cache/
 installer/output/
+installer/release/
 *.msix
 *.cer
 *.pfx
